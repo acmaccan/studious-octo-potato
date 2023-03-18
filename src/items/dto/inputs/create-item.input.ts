@@ -8,12 +8,18 @@ export class CreateItemInput {
   @IsString()
   name: string;
 
-  @Field(() => Float)
-  @IsPositive()
-  quantity: number;
+  // Not necessary since relation between items and users
+  // @Field(() => Float)
+  // @IsPositive()
+  // quantity: number;
 
   @Field(() => String, { nullable: true })
   @IsString()
   @IsOptional()
-  quantityUnit: string;
+  quantityUnits: string;
+
+  @Field(() => String, { nullable: true })
+  @IsString()
+  @IsOptional()
+  category: string;
 }
